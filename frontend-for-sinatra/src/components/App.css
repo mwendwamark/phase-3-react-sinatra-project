@@ -14,6 +14,9 @@
   padding: 0;
   font-weight: 900;
   font-family: "Clicker Script";
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 
 .logo img {
@@ -62,6 +65,7 @@
 
 .house-info p {
   margin: 5px 0;
+  
 }
 
 .house-buttons {
@@ -97,10 +101,28 @@ input[type="text"] {
   color: dimgray !important;
 }
 
-p {
-  font-size: 16px;
-  margin: 10px 0;
+.home-page-overview {
+  font-size: 24px;
+  margin: 20px 0 10px; /* Adjust the top margin value as needed */
+  padding-top: 90px;
+  font-weight: 200;
+  font-family:  'poppins';
 }
+.information-p {
+  color: whitesmoke;
+  font-family: "poppins";
+  font-size: 16px;
+}
+.information-p span {
+  color: rgb(0, 221, 255);
+  align-items: flex-start;
+  font-weight: 500;
+  font-family: "Clicker Script",;
+}
+.information-p em{
+  color: rgb(108, 237, 72);
+}
+
 
 /* Navbar Styles */
 .nav-link-container {
@@ -112,9 +134,9 @@ p {
   position: absolute;
   top: 30px;
   right: 0;
-  width: 100%;
+  width: 40%;
   font-size: 24px;
-  padding-top: 20px;
+  padding-top: 20px;  
 }
 
 .nav-links-list {
@@ -128,16 +150,21 @@ p {
   display: inline-block;
   margin-right: 10px;
   color: lightskyblue;
-}
+  padding-bottom:25px;
+  }
 
 .nav-link a {
   text-decoration: none;
   color: rgb(0, 221, 255);
   font-weight: bold;
   padding: 10px;
-  font-size: 16px;
+  font-size: 24px;  
 }
 
 .nav-link a:hover {
   color: #000;
+  border: 1px solid white;
+  border-radius: 7px;
+  background:rgb(0, 221, 255) ;
+  color: black;
 }

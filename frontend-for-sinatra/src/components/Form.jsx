@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 
 function Form() {
   const [formData, setFormData] = useState({
-    title: "",
-    author: "",
-    content: "",
-    tags: "",
+    description: "",
+    name: "",
+    email: "",
+    ratings: "",
+    comments: "",
     imageUrl: "",
   });
+
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:9292/blogs")
+      .then((response) => response.json())
+      .then((data) => setBlogs(data))
+      .catch((error) => console.error(error));
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,66 +30,86 @@ function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add logic for submitting the form data
-    console.log(formData);
-    // Reset form fields
-    setFormData({
-      title: "",
-      author: "",
-      content: "",
-      tags: "",
-      imageUrl: "",
-    });
+    fetch("http://localhost:9292/blogs", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setBlogs([...blogs, data]);
+        setFormData({
+          description: "",
+          name: "",
+          email: "",
+          ratings: "",
+          comments: "",
+          imageUrl: "",
+        });
+      })
+      .catch((error) => console.error(error));
   };
 
   return (
     <>
       <h1 className="logo">
-        <span>Real Estate</span>Blogs.
+        <span>Real Estate</span> Blog.
       </h1>
       <Navbar />
 
       <div className="form-container">
         <form onSubmit={handleSubmit}>
-          <h2>Feel free to add blog</h2>
+          <h2>Feel free to add a blog</h2>
           <div className="form-group">
-            <label>Title:</label>
+            <label>Description:</label>
             <input
               type="text"
-              name="title"
-              value={formData.title}
-              onChange={handleChange}
-              className="input-name"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>Author:</label>
-            <input
-              type="text"
-              name="author"
-              value={formData.author}
+              name="description"
+              value={formData.description}
               onChange={handleChange}
               required
             />
           </div>
           <div className="form-group">
-            <label>Content:</label>
+            <label>Name:</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Email:</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Rating:</label>
+            <input
+              type="number"
+              name="ratings"
+              value={formData.ratings}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Comments:</label>
             <textarea
-              name="content"
-              value={formData.content}
+              name="comments"
+              value={formData.comments}
               onChange={handleChange}
               required
             ></textarea>
-          </div>
-          <div className="form-group">
-            <label>Tags:</label>
-            <input
-              type="text"
-              name="tags"
-              value={formData.tags}
-              onChange={handleChange}
-            />
           </div>
           <div className="form-group">
             <label>Image URL:</label>
