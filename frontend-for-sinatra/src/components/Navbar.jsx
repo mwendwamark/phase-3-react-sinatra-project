@@ -1,17 +1,21 @@
 import React from "react";
-import "./App.css";
 import { Link } from "react-router-dom";
+import "./App.css"
 
-function App() {
+function Navbar() {
   return (
-    <nav>
-      <ul>
-        <li>
+    <nav className="nav-link-container">
+      
+        <li className="nav-link">
           <Link to="/">Home</Link>
         </li>
-      </ul>
+        <li className="nav-link">
+          <Link to="/form">Form</Link>
+        </li>
+
+      
     </nav>
   );
 }
 
-export default App;
+export default Navbar;

@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+
 #root {
   max-width: 1100px;
   margin: 0 auto;
@@ -5,65 +8,55 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+/* =====Home ======= */
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 20px;
 }
 
 .logo {
-  font-size: 36px;
-  margin-bottom: 20px;
-  top: 0;
-  left: 0;
-}
-
-ul {
-  list-style-type: none;
+  margin: 0;
   padding: 0;
+  font-size: 28px;
 }
 
-li {
-  margin-bottom: 20px;
+.logo span {
+  font-weight: bold;
 }
 
-img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
+.house-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.house-item {
+  margin: 10px;
+  text-align: center;
+}
+
+.house-item img {
+  width: 200px;
+  height: 200px;
+}
+
+.house-buttons {
+  margin-top: 10px;
+}
+
+.btn-comment,
+.btn-details {
+  margin-right: 5px;
+  padding: 8px 12px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-comment:hover,
+.btn-details:hover {
+  background-color: #ccc;
 }

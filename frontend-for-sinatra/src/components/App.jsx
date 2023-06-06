@@ -1,32 +1,22 @@
-import { useState , useEffect} from 'react'
-import './App.css'
-import Home from './Home'
+import React from "react";
+import { BrowserRouter  ,Routes, Route } from "react-router-dom";
+
+import Home from "./Home";
+import Form from "./Form";
+import Navbar from "./Navbar";
 
 function App() {
-  
-  const [houses ,setHouses] = useState([])
-  useEffect(function(){
-    fetch("http://localhost:9292/estates")
-    .then((response) => response.json())
-    .then(data => {
-      setHouses(data);
-    })
-  },[])
   return (
     <>
-    <Home />
-    {/* <div className='container'>
-      <h1 className='logo'>Real Estate Blog</h1>
-      <ul>
-      {houses.map((house)=>(
-        <li key={house.id}>
-          <img src={house.image_url} alt="House" />
-        </li>
-      ))}
-      </ul>
-    </div> */}
+    {/* <Navbar/> */}
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/form" element={<Form />} />
+      </Routes>
+    </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
