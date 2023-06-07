@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Home() {
   const [houses, setHouses] = useState([]);
   const [newHouse, setNewHouse] = useState({
-    imageUrl: "",
+    image_url: "",
     description: "",
     location: "",
     rent: 0,
@@ -160,12 +160,12 @@ function Home() {
       <form onSubmit={handleSubmit} className="add-house-form">
         <h2>Add a New House</h2>
         <div className="form-group">
-          <label htmlFor="imageUrl">Image URL:</label>
+          <label htmlFor="image_url">Image URL:</label>
           <input
             type="text"
-            id="imageUrl"
-            name="imageUrl"
-            value={newHouse.imageUrl}
+            id="image_url"
+            name="image_url"
+            value={newHouse.image_url}
             onChange={handleInputChange}
             required
           />
