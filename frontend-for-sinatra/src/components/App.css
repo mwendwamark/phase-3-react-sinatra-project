@@ -160,7 +160,6 @@
 .nav-link {
   display: inline-block;
   margin-right: 10px;
-  color: lightskyblue;
   padding-bottom: 25px;
 }
 
@@ -169,16 +168,20 @@
   color: rgb(0, 221, 255);
   font-weight: bold;
   padding: 10px;
-  font-size: 24px;
+  font-size: 29px;
+  letter-spacing: 3px;
 }
 
 .nav-link a:hover {
-  color: #000;
-  border: 1px solid white;
+  color: rgb(0, 221, 255);
+  border-bottom: 2px solid rgb(0, 221, 255);
   border-radius: 7px;
-  background: rgb(0, 221, 255);
-  color: black;
 }
+
+.nav-link a.active {
+  border-radius: 7px 7px 0 0;
+}
+
 /* ===========Form Component Stylings======= */
 .form-container {
   width: 400px;
@@ -315,8 +318,7 @@ button[type="reset"]:hover {
   outline: none;
   font-size: 20px;
   color: rgb(0, 221, 255);
-  margin-right: 2px;
-  
+  margin-right: 2px;  
   justify-content: center;
   align-items: center;
 }
