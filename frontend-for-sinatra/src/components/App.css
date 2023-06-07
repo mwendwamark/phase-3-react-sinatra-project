@@ -18,7 +18,7 @@
   top: 20px;
   left: 20px;
 }
-
+/* ===============Home ================ */
 .logo img {
   color: rgb(0, 221, 255);
   background: rgb(0, 221, 255);
@@ -65,40 +65,6 @@
 
 .house-info p {
   margin: 5px 0;
-  
-}
-
-.house-buttons {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-input[type="text"] {
-  padding: 8px;
-  width: 100%;
-  border: 1px solid lightgray;
-  border-radius: 4px;
-  margin-right: 5px;
-}
-
-.btn-comment,
-.btn-details {
-  margin-right: 5px;
-  padding: 8px 12px;
-  background-color: dimgray;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  color: rgb(0, 221, 255);
-}
-
-.btn-comment:hover,
-.btn-details:hover {
-  background-color: rgb(0, 221, 255);
-  border: 1px solid white;
-  color: dimgray !important;
 }
 
 .home-page-overview {
@@ -106,7 +72,7 @@ input[type="text"] {
   margin: 20px 0 10px; /* Adjust the top margin value as needed */
   padding-top: 90px;
   font-weight: 200;
-  font-family:  'poppins';
+  font-family: "poppins";
 }
 .information-p {
   color: whitesmoke;
@@ -117,14 +83,59 @@ input[type="text"] {
   color: rgb(0, 221, 255);
   align-items: flex-start;
   font-weight: 500;
-  font-family: "Clicker Script",;
+  font-family: "poppins";
 }
-.information-p em{
+.information-p em {
   color: rgb(108, 237, 72);
 }
 
+.explore-blog-text {
+  margin-top: 20px;
+  font-style: italic;
+}
+.add-house-form {
+  width: 50%;
+  /* background: red; */
+  border-bottom: 4px solid white;
+  border-left: 1px solid rgb(0, 221, 255);
+  border-top: 1px solid white;
 
-/* Navbar Styles */
+  border-radius: 19px;
+}
+
+.input-location-field,
+.input-rent-field,
+.input-house-field {
+  width: 50%;
+  border-radius: 7px;
+  height: 30px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.input-description-field {
+  width: 50%;
+  height: 70px;
+  border-radius: 7px;
+}
+.add-house-form .add-house-button {
+  width: 30%;
+  height: 40px;
+  background: green;
+  margin: 0 auto; /* Center horizontally */
+  display: flex;
+  justify-content: center; /* Center horizontally within flex container */
+  align-items: center; /* Center vertically within flex container */
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.add-house-form label {
+  display: block;
+  font-weight: bold;
+  position: absolute;
+  margin-left: 70px;
+}
+
+/*=========== Navbar Styles=========== */
 .nav-link-container {
   display: flex;
   justify-content: flex-end;
@@ -136,7 +147,7 @@ input[type="text"] {
   right: 0;
   width: 40%;
   font-size: 24px;
-  padding-top: 20px;  
+  padding-top: 20px;
 }
 
 .nav-links-list {
@@ -150,36 +161,36 @@ input[type="text"] {
   display: inline-block;
   margin-right: 10px;
   color: lightskyblue;
-  padding-bottom:25px;
-  }
+  padding-bottom: 25px;
+}
 
 .nav-link a {
   text-decoration: none;
   color: rgb(0, 221, 255);
   font-weight: bold;
   padding: 10px;
-  font-size: 24px;  
+  font-size: 24px;
 }
 
 .nav-link a:hover {
   color: #000;
   border: 1px solid white;
   border-radius: 7px;
-  background:rgb(0, 221, 255) ;
+  background: rgb(0, 221, 255);
   color: black;
-  
 }
 /* ===========Form Component Stylings======= */
 .form-container {
   width: 400px;
   margin: 120px auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  border-bottom: 1px solid rgb(0, 221, 255);
+  border-top: 1px solid #ccc;
   border-radius: 14px;
   margin-left: 500px;
   justify-content: center;
   align-items: center;
-  height: 60vh ;
+  height: 60vh;
   margin-top: 200px;
 }
 .form-container h2 {
@@ -198,7 +209,7 @@ input[type="text"] {
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
-  width: 100%;
+  width: 80%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -212,7 +223,7 @@ input[type="text"] {
 button[type="submit"],
 button[type="reset"] {
   display: block;
-  width: 100%;
+  width: 85%;
   padding: 10px;
   margin-top: 10px;
   background-color: #4caf50;
@@ -220,6 +231,7 @@ button[type="reset"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  align-items: center;
 }
 
 button[type="reset"] {
@@ -232,48 +244,96 @@ button[type="reset"]:hover {
 }
 /* ======Blogs Styling====== */
 .blogs-container {
-  width: 80%;
+  width: 1100px;
   margin: 0 auto;
-  padding: 20px;
+  flex-wrap: wrap;
+  display: flex;
+  margin-left: 300px;
 }
 
 .blogs-heading {
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
+  font-size: 34px;
+  margin-top: 100px;
+  margin-left: 300px;
+  letter-spacing: 2px;
+  text-decoration: underline;
 }
 
 .blog-item {
-  background-color: #f5f5f5;
+  border: 1px solid #ccc;
   padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  border-radius: 12px;
+  flex-basis: 33.33%;
+  margin-top: 40px;
+  margin-right: 40px;
 }
-
+.paragraph-p {
+  margin-left: 300px;
+  font-size: 20px;
+}
+.blog-h3 {
+  margin-left: 300px;
+  font-size: 24px;
+}
 .blog-author {
   font-size: 18px;
   margin-bottom: 10px;
-  color: #333;
 }
 
 .blog-estate {
   font-size: 16px;
   margin-bottom: 10px;
-  color: #888;
+}
+.blog-ratings span,
+.blog-comments span,
+.blog-author span,
+.blog-estate span {
+  font-size: 20px;
+  font-weight: 300;
+  border-bottom: 1px solid rgb(0, 221, 255);
 }
 
-.blog-ratings {
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: #333;
+.blog-author em,
+.blog-estate em,
+.blog-ratings em,
+.blog-comments em {
+  font-size: 20px;
+  font-weight: 200;
 }
 
-.blog-comments {
-  font-size: 14px;
-  color: #555;
+.blog-likes {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
-span {
+
+.like-btn {
+  background-color: transparent;
+  border:transparent solid transparent;
+  cursor: pointer;
+  outline: none;
+  font-size: 20px;
+  color: rgb(0, 221, 255);
+  margin-right: 2px;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-button {
+  background-color: rgb(0, 221, 255);
   color: black;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+.like-btn:hover {
+  color: red;
+}
+.delete-button:hover {
+  color: rgb(0, 0, 0);
+  background: crimson !important;
+  border: transparent !important;
 }
