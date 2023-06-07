@@ -8,15 +8,21 @@ function Form() {
     email: "",
     ratings: "",
     comments: "",
-    imageUrl: "",
+    image_url: "",
   });
 
   const [blogs, setBlogs] = useState([]);
+  const [owners, setOwners] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:9292/blogs")
       .then((response) => response.json())
       .then((data) => setBlogs(data))
+      .catch((error) => console.error(error));
+
+    fetch("http://localhost:9292/owners")
+      .then((response) => response.json())
+      .then((data) => setOwners(data))
       .catch((error) => console.error(error));
   }, []);
 
@@ -30,7 +36,7 @@ function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:9292/blogs", {
+    fetch("http://localhost:9292/owners", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,10 +52,21 @@ function Form() {
           email: "",
           ratings: "",
           comments: "",
-          imageUrl: "",
+          image_url: "",
         });
       })
       .catch((error) => console.error(error));
+  };
+
+  const handleReset = () => {
+    setFormData({
+      description: "",
+      name: "",
+      email: "",
+      ratings: "",
+      comments: "",
+      image_url: "",
+    });
   };
 
   return (
@@ -60,18 +77,9 @@ function Form() {
       <Navbar />
 
       <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <h2>Feel free to add a blog</h2>
-          <div className="form-group">
-            <label>Description:</label>
-            <input
-              type="text"
-              name="description"
-              value={formData.description}
-              onChange={handleChange}
-              required
-            />
-          </div>
+        <form onSubmit={handleSubmit} className="form-container-input">
+          <h2 className="heading-2">Login</h2>
+
           <div className="form-group">
             <label>Name:</label>
             <input
@@ -92,36 +100,11 @@ function Form() {
               required
             />
           </div>
-          <div className="form-group">
-            <label>Rating:</label>
-            <input
-              type="number"
-              name="ratings"
-              value={formData.ratings}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>Comments:</label>
-            <textarea
-              name="comments"
-              value={formData.comments}
-              onChange={handleChange}
-              required
-            ></textarea>
-          </div>
-          <div className="form-group">
-            <label>Image URL:</label>
-            <input
-              type="text"
-              name="imageUrl"
-              value={formData.imageUrl}
-              onChange={handleChange}
-            />
-          </div>
+
           <button type="submit">Submit</button>
-          <button type="reset">Clear</button>
+          <button type="reset" onClick={handleReset}>
+            Clear
+          </button>
         </form>
       </div>
     </>

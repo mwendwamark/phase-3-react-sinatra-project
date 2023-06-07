@@ -1,20 +1,20 @@
 import React from "react";
-import { BrowserRouter  ,Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./Home";
 import Form from "./Form";
-import Navbar from "./Navbar";
+import Blogs from "./Blogs";
 
 function App() {
   return (
     <>
-    {/* <Navbar/> */}
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/form" element={<Form />} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/login" element={<Form />} />
+          <Route path="/blogs" element={<Blogs />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

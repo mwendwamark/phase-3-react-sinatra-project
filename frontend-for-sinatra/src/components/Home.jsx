@@ -124,12 +124,12 @@ function Home() {
               <p className="information-p">
                 <span>Description: </span> {house.description}
               </p>
-              <button
+              {/* <button
                 onClick={() => handleShowComments(house.id)}
                 className="show-comments-button"
               >
                 {showComments[house.id] ? "Hide Comments" : "Show Comments"}
-              </button>
+              </button> */}
               {showComments[house.id] && (
                 <div className="comments-section">
                   {house.comments.map((comment, index) => (
