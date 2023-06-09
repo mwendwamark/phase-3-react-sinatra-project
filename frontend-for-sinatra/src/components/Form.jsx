@@ -3,12 +3,8 @@ import Navbar from "./Navbar";
 
 function Form() {
   const [formData, setFormData] = useState({
-    description: "",
     name: "",
     email: "",
-    ratings: "",
-    comments: "",
-    image_url: "",
   });
 
   const [blogs, setBlogs] = useState([]);
@@ -34,6 +30,8 @@ function Form() {
     }));
   };
 
+  console.log(formData);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch("http://localhost:9292/owners", {
@@ -43,30 +41,25 @@ function Form() {
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => response.json())
+      // .then((response) => response.json())
       .then((data) => {
         setBlogs([...blogs, data]);
         setFormData({
-          description: "",
           name: "",
           email: "",
-          ratings: "",
-          comments: "",
-          image_url: "",
         });
       })
       .catch((error) => console.error(error));
+    e.target.reset();
   };
 
-  const handleReset = () => {
+
+  const handleReset = (e) => {
     setFormData({
-      description: "",
       name: "",
       email: "",
-      ratings: "",
-      comments: "",
-      image_url: "",
     });
+    e.target.reset();
   };
 
   return (
